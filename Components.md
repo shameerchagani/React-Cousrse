@@ -1,22 +1,23 @@
 # Introduction to Components in React.
 
-In this topic, we will understand what React Components are, how to create components and how<br> to render them.
+In this topic, we will understand what React Components are, how to create<br> components and how to render them.
 
 ### What are React Components?<br>
-React Components are the building blocks of any React application. Components allow us to<br> split our UI into independent and resuable UI pieces.<br>
+React Components are the building blocks of any React application. Components<br> allow us to split our UI into independent and resuable UI pieces.<br>
 
-A typical React application will have many Components like header, navbar, main<br> content and a footer component. Conceptually a component is either a JavaScript class or<br> function which are refer to either stateful or stateless, also known as logic or presentational<br> components that accepts inputs which are called properties or by convention known as props<br> and returns a React element that describes how a section of the User Interface should appear.<br>
+A typical React application will have many Components like header, navbar, main<br> content and a footer component. Conceptually a component is either a JavaScript class or<br> function which are refer to either stateful or stateless component, also known as logic or<br> presentational components that accepts inputs which are called properties or by convention known<br> as props and returns a React element that describes how a section of the User Interface should look like.<br>
 
 ## Creating a Component
 
-Class base component definition.
+Let's see how class base component are defined.
+
+## Stateless Class component Example 
+<br>
 
 ```js
-Stateless Class component Example
-------------------------------------
-import React from 'react';
+import React, { Component } from 'react'
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <h1>Hello world!</h1>
@@ -25,10 +26,10 @@ class App extends React.Component {
 }
 ```
 
-Function base component definition.
+Now let's see how functional base components are defined.
 ```js
 Stateless functional component Example
----------------------------------------
+
 ES5 - ES2015
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
     <h1>Hello world!</h1>
   )
 }
+
+------ OR -----
 
 ES6 - ES2016 ->
 
@@ -50,10 +53,14 @@ const App = () => {
 }
 ```
 
+## Statefull Class components
+<br>
+
 ```js
-Stateful Class components
---------------------------
-    
+Statefull Class component
+
+import React from 'react'
+
 class SayHello extends React.Component {
   constructor() {
     super(props);
@@ -70,7 +77,7 @@ class SayHello extends React.Component {
 }
 ```
 ```js
-Stateful Functional component using Hooks Example
+Statefull Functional component using Hooks Example
 
 function SayHello() {
   const [name, setName] = React.useState("Charles");
@@ -80,3 +87,7 @@ function SayHello() {
   )
 };
 ``` 
+
+## What are the differences of stateless and stateful component?.
+<br>
+The difference is that one has state, and the other doesn’t. That means the stateful components<br> are keeping track of data changes in the application, while stateless components print out what is<br> given to them via properties, also known as props by convention, or they always render the same<br> thing in other words it's deterministics.
